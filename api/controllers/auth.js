@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
+import jwt from 'jsonwebtoken';
 import { createError } from "../utils/error.js"
 
 export const register = async (req, res, next) => {
@@ -32,14 +33,23 @@ export const login = async (req, res, next) => {
     } 
     
     const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password);
+
+    // for verifying identity of users whether they're admin or normal user
+    // use this command on terminal to generate secret key: openssl rand -base64 32
     
-    // const {password, isAdmin, ...otherDetails} user;
+    // PURPOSE: when we need to CRUD a hotel or models, its verify our token first, then check our user information
+    // if it is admin, we will allow it to do CRUD models
+    const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT);
+
     const {password, isAdmin, ...otherDetails} = user._doc;
     if (!isPasswordCorrect) {
       return next(createError(400, "Wrong password or username!"));
     }
 
-    res.status(200).json(otherDetails);
+    // httpOnly: true => does not allow any client secret to reach this cookie => much more secure
+    res.cookie("access_token", token, {
+      httpOnly: true,
+    }).status(200).json(otherDetails);
   } catch (err) {
     next(err);
   }
