@@ -20,4 +20,6 @@ router.get("/:id", getHotel);
 // GET ALL
 router.get("/", getHotels);
 
+// TODO: GET hotels by featured,...
+
 export default router;
