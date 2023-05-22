@@ -85,10 +85,11 @@
 
 .logo {
   cursor: pointer;
-  font-weight: 500;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  letter-spacing: 8px;
+  font-weight: 700;
+  /* font-family: 'Cormorant Garamond', serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  letter-spacing: 6px;
 }
 
 .navButton {

@@ -2,7 +2,6 @@
 
 .header {
   font-family: 'Montserrat', sans-serif;
-  height: 330px;
   font-size: 16px;
   background-color: #003580;
   color: white;
@@ -11,53 +10,51 @@
   position: relative;
 }
 
-.header_container {
+.headerContainer {
   width: 100%;
   max-width: 1024px;
   margin: 20px 0px 100px 0px;
-  height: 60px;
 }
 
-.header_list {
-  border: none;
+.headerList {
   display: flex;
   gap: 40px;
 }
 
-.header_list_item {
+.headerListItem {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.header_list_item a {
+.headerListItem a {
   text-decoration: none;
   color: white;
 }
 
-.header_list_item.active {
+.headerListItem.active {
   border: 1px solid white;
   padding: 10px;
   border-radius: 20px;
 }
 
-.header_list_item:hover {
+.headerListItem:hover {
   cursor: pointer;
 }
 
-.header_infor {
+.headerInfor {
   margin-top: 50px;
 }
 
-.header_title {
+.headerTitle {
   margin-bottom: 30px;
 }
 
-.header_desc {
+.headerDesc {
   margin: 20px 0px;
 }
 
-.header_btn {
+.headerBtn {
   background-color: #0071c2;
   color: white;
   font-weight: 500;
