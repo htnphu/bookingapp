@@ -26,28 +26,33 @@
 
 .headerList {
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .headerListItem {
   display: flex;
   align-items: center;
+  padding: 11px 16px;
   gap: 10px;
 }
 
 .headerListItem a {
   text-decoration: none;
   color: white;
+  margin-left: 8px 8px 0px 0px;
 }
 
 .headerListItem.active {
   border: 1px solid white;
   padding: 10px;
   border-radius: 20px;
+  background-color: #1a4a8d;
 }
 
 .headerListItem:hover {
   cursor: pointer;
+  border-radius: 20px;
+  background-color: #1a4a8d;
 }
 
 .headerInfor {
@@ -74,7 +79,7 @@
 
 .headerBtn:hover {
   background-color: #035793;
-  transition: all 0.3s ease-out;
+  transition: all 0.15s ease-out;
 }
 
 .headerSearch {
@@ -94,7 +99,7 @@
 }
 
 .headerIcon {
-  color: lightgrey;
+  color: #757575;
 }
 
 .headerSearchItem {
@@ -109,7 +114,7 @@
 }
 
 .headerSearchText {
-  color: lightgrey;
+  color: #757575;
   cursor: pointer;
 }
 
