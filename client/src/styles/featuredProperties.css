@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fp {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.fpItem {
+  flex: 1;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fpImg {
+  width: 100%;
+}
+
+.fpName {
+  font-weight: bold;
+}
+
+.fpCity {
+  font-weight: 300;
+}
+
+.fpPrice {
+  font-weight: 500;
+}
+
+.fpRating button {
+  background-color: #003580;
+  color: white;
+  border: none;
+  padding: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.fpRating spam {
+  font-size: 14px;
+}
