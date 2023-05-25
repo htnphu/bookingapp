@@ -73,7 +73,7 @@ const Header = ({type}) => {
           </h1>
           <p className="headerDesc">
             Get rewarded for your travels – unlock instant savings of 25% or
-            more with a free Trivella account
+            more with a free Trivella account.
           </p>
           <button className="headerBtn">Sign in or Register</button>
 
