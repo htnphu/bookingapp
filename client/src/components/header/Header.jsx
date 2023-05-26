@@ -13,9 +13,23 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import "../../styles/header.css";
 import { format } from "date-fns";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Header = ({type}) => {
+  useEffect(() => {
+  // eslint-disable-next-line
+    document.addEventListener('click', hanldeClickOutside, true)
+  }, []);
+
+  const hanldeClickOutside = (e) => {
+    if (!refOne.current.contains(e.target)) {
+      setOpenOptions(openOptions);
+      setOpenDate(openDate);
+    }
+  }
+
+  const refOne = useRef(null);
+
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -82,7 +96,7 @@ const Header = ({type}) => {
               <FontAwesomeIcon icon={faBed} className="headerIcon" />
               <input type="text" placeholder="Where are you going?" name="" id="" className="headerSearchInput" />
             </div>
-            <div className="headerSearchItem">
+            <div className="headerSearchItem" ref={refOne}>
               <FontAwesomeIcon onClick={() => setOpenDate(!openDate)} icon={faCalendarDays} className="headerIcon" />
               <span onClick={() => setOpenDate(!openDate)} className="headerSearchText">{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
               {openDate && <DateRange 
@@ -93,7 +107,7 @@ const Header = ({type}) => {
                 className="date"
               />}
             </div>
-            <div className="headerSearchItem">
+            <div className="headerSearchItem" ref={refOne}>
               <FontAwesomeIcon onClick={() => setOpenOptions(!openOptions)}  icon={faPerson} className="headerIcon" />
               <span onClick={() => setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult • ${options.children} children • ${options.room} room`}</span>
               {openOptions && <div className="options">
